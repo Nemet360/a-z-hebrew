@@ -1,0 +1,43 @@
+{
+  "name": "hebrew",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./build/cli.js",
+  "bin": "./build/cli.js",
+  "pkg": {
+    "scripts": "build/**/*.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tsc" : "tsc",
+    "prettier": "prettier --write src/**/*.ts",
+    "build": "npm rum prettier & npm run tsc",
+    
+    "build-win": "pkg package.json -t node14-win-x64 -o ./dist/win/english-to-heb",
+    "build-linux": "pkg package.json -t node14-linux-x64 -o ./dist/linux/english-to-heb",
+
+    "bundle-win": "npm run build & npm run build-win",
+    "bundle-linux": "npm run build & npm run build-linux",
+    "bundle-all": "npm run build & npm run build-linux & npm run build-win"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jest": "^28.1.1",
+    "@types/node": "^17.0.41",
+    "@types/yargs": "^17.0.10",
+    "@typescript-eslint/eslint-plugin": "^5.27.1",
+    "@typescript-eslint/parser": "^5.27.1",
+    "eslint": "^8.17.0",
+    "pkg": "^5.7.0",
+    "prettier": "^2.6.2",
+    "ts-jest": "^28.0.4",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.7.3"
+  },
+  "dependencies": {
+    "winston": "^3.7.2",
+    "yargs": "^17.5.1"
+  }
+}
