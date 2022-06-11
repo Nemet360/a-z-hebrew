@@ -8,7 +8,8 @@
     "scripts": "build/**/*.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "jest": "jest",
+    "test": "npm run build & npm run jest",
     "tsc" : "tsc",
     "prettier": "prettier --write src/**/*.ts",
     "build": "npm rum prettier & npm run tsc",
